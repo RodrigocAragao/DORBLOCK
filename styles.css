@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    margin: 0;
+}
+
+/* Estilos gerais do header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: black;
+}
+
+/* Título à esquerda */
+.header-title h1 {
+    margin: 0;
+    font-size: 24px;
+    color: white;
+    margin-left: 50px;
+}
+
+/* Botões no centro */
+.header-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+/* Estilos dos botões no centro */
+.header-buttons a {
+    color: white; 
+    text-decoration:none;
+    font-family: 'Montserrat', sans-serif; 
+    margin: 0 25px; 
+    font-size: 15px;
+}
+
+a:hover {
+    color: white; /* Cor do texto dos links */ 
+    text-decoration: underline;
+}
+
+/* CTA à direita */
+.header-cta .cta-button {
+    padding: 10px 25px;
+    margin-right: 50px;
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.header-cta .cta-button:hover {
+    background-color: white;
+    color: black;
+}
+
+
+
+
+
+/* Estilo da seção com imagem de fundo */
+.background-section {
+    position: relative; /* Necessário para o overlay com pseudo-elemento */
+    background-image: url('backGround_ciclista.png'); /* Caminho da imagem de fundo */
+    background-size: cover; /* Cobre toda a área da seção */
+    background-position: center; /* Centraliza a imagem */
+    padding: 50px 20px; /* Espaçamento interno */
+    height: 500px; /* Altura da seção */
+    display: flex;
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+}
+
+/* Overlay escuro */
+.background-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Overlay escuro com 50% de opacidade */
+    z-index: 1; /* Coloca o overlay abaixo do conteúdo */
+}
+
+/* Estilo do container interno */
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%; /* Largura máxima do conteúdo */
+    width: 100%; /* O conteúdo ocupa toda a largura disponível */
+    position: relative; /* Necessário para ficar acima do overlay */
+    z-index: 2; /* Coloca o conteúdo acima do overlay */
+}
+
+/* Estilo do texto à esquerda */
+.text-content {
+    color: white; /* Cor do texto */
+    max-width: 50%; /* Largura máxima do texto */
+    margin-left: 50px;
+}
+
+.text-content h2 {
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.text-content p {
+    font-size: 22px;
+}
+
+/* Estilo da imagem à direita */
+.image-content img {
+    max-width: 100%; /* Largura máxima da imagem */
+    height: auto;
+    max-height: 400px; /* Define a altura máxima da imagem */
+    margin-right: 150px;
+
+}
+
+
+
+
+/* Estilo da seção com lista e texto */
+.text-section {
+    display: flex;
+    justify-content: flex-end; /* Alinha os elementos à direita */
+    gap: 20px; /* Espaçamento entre os elementos */
+    padding: 20px;
+}
+
+/* Estilo do texto à direita */
+.text-information {
+    text-align: justify; /* Justifica o texto */
+    padding: 50px 70px;
+    width: 50%;
+}
+
+
+.inline-list ul {
+    display: inline; /* Exibe a lista em linha */
+    padding: 0; /* Remove o preenchimento padrão */
+    margin: 0; /* Remove as margens padrão */
+    list-style: none; /* Remove os marcadores da lista */
+}
+
+.inline-list li {
+    display: inline; /* Exibe os itens da lista em linha */
+    margin-right: 10px; /* Espaçamento entre os itens */
+}
+
+/* Estilo da seção com imagem de fundo */
+.blocks-section {
+    display: flex;
+    justify-content: center; /* Centraliza os blocos horizontalmente */
+    gap: 20px; /* Espaçamento entre os blocos */
+    padding: 20px;
+    background-image: url('corrida.png'); /* Caminho para a imagem de fundo */
+    background-size: cover; /* Cobre toda a seção com a imagem */
+    background-position: center; /* Centraliza a imagem de fundo */
+    position: relative; /* Necessário para sobreposição */
+    height: 500px; /* Define a altura da seção */
+}
+
+/* Estilo do overlay escuro para destacar os blocos */
+.blocks-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Adiciona um overlay escuro */
+    z-index: 1; /* Coloca o overlay abaixo dos blocos */
+}
+
+/* Estilo de cada bloco */
+.block {
+    background-color: transparent; /* Cor de fundo do bloco */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para destacar o bloco */
+    text-align: center; /* Centraliza o conteúdo do bloco */
+    width: 250px; /* Largura fixa para cada bloco */
+    position: relative; /* Necessário para posicionamento acima do overlay */
+    z-index: 2; /* Garante que os blocos fiquem acima do overlay */
+}
+
+/* Estilo da imagem no bloco */
+.block img {
+    max-width: 100%; /* Ajusta a imagem ao tamanho do bloco */
+    margin-bottom: 15px; /* Espaçamento abaixo da imagem */
+}
+
+/* Estilo da descrição */
+.block p {
+    font-size: 16px;
+    margin-bottom: 15px; /* Espaçamento abaixo do texto */
+    color: white;
+}
+
+/* Estilo do botão CTA */
+.block button {
+    padding: 10px 20px;
+    background-color: transparent; /* Cor de fundo do botão */
+    color: white;
+    border-color: white;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Estilo do botão CTA no hover */
+.block button:hover {
+    background-color: white;
+    color: black;
+}
+
+/* Estilo do Footer */
+footer {
+    background-color: #333; /* Fundo escuro */
+    color: #fff; /* Texto branco */
+    font-size: 14px;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+    padding: 20px;
+}
+
+/* Estilo da Seção "Sobre Nós" */
+.footer-section.about p {
+    text-align: justify;
+}
+
+.footer-section.about
+
+/* Estilo da Seção de Contato */
+.footer-section.contact ul li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.footer-section.contact ul li i {
+    margin-right: 10px;
+}
+
+/* Seção de Direitos Autorais */
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #444;
+}
