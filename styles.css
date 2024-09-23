@@ -1,65 +1,102 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300&display=swap');
 
-body {
+html, body {
     font-family: 'Montserrat', sans-serif;
     font-weight: 300;
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Garante que o conteúdo ocupe pelo menos 100% da altura da janela */
+    overflow-x: hidden; /* Impede que a página permita rolagem horizontal */
 }
 
-/* Estilos gerais do header */
+main {
+    flex: 1; /* Faz com que o main ocupe o espaço restante, empurrando o footer para o final da página */
+}
+
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
     background-color: black;
+    color: white;
 }
 
-/* Título à esquerda */
+/* Título do Header */
 .header-title h1 {
-    margin: 0;
     font-size: 24px;
-    color: white;
     margin-left: 50px;
 }
 
-/* Botões no centro */
-.header-buttons {
+/* Centralizando os CTAs */
+.header-cta-group {
     display: flex;
     gap: 15px;
 }
 
-/* Estilos dos botões no centro */
-.header-buttons a {
-    color: white; 
-    text-decoration:none;
-    font-family: 'Montserrat', sans-serif; 
-    margin: 0 25px; 
-    font-size: 15px;
-}
-
-a:hover {
-    color: white; /* Cor do texto dos links */ 
-    text-decoration: underline;
-}
-
-/* CTA à direita */
-.header-cta .cta-button {
-    padding: 10px 25px;
-    margin-right: 50px;
+.header-cta-group button, .header-cta-right button {
+    padding: 10px 20px;
     background-color: transparent;
     color: white;
-    border: 2px solid white;
-    border-radius: 50px;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s;
 }
 
-.header-cta .cta-button:hover {
+.header-cta-group button:hover {
+    text-decoration: underline;
+} 
+
+.header-cta-right button:hover {
     background-color: white;
     color: black;
 }
 
+/* CTA à direita */
+.header-cta-right {
+    display: flex;
+    margin-right: 50px;
+}
+
+/* Ícone de Menu Sanduíche (oculto por padrão) */
+.menu-icon {
+    display: none; /* Só exibido em telas menores que 768px */
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Media Query para telas menores que 768px */
+@media (max-width: 768px) {
+    /* Oculta os CTAs centrais e o CTA da direita */
+    .header-cta-group, .header-cta-right {
+        display: none;
+    }
+
+    /* Exibe o ícone de menu */
+    .menu-icon {
+        display: block;
+        margin-right: 50px;
+    }
+
+    /* Exibe o menu quando o ícone é clicado */
+    .header-cta-group.active, .header-cta-right.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 60px; /* Abaixo do header */
+        right: 20px;
+        background-color: #333;
+        padding: 10px;
+        gap: 10px;
+        border-radius: 5px;
+    }
+
+    .header-cta-group.active button, .header-cta-right.active button {
+        width: 100%;
+        text-align: center;
+    }
+}
 
 
 
@@ -70,10 +107,8 @@ a:hover {
     background-image: url('backGround_ciclista.png'); /* Caminho da imagem de fundo */
     background-size: cover; /* Cobre toda a área da seção */
     background-position: center; /* Centraliza a imagem */
-    padding: 50px 20px; /* Espaçamento interno */
     height: 500px; /* Altura da seção */
     display: flex;
-    align-items: center; /* Centraliza o conteúdo verticalmente */
     justify-content: center; /* Centraliza o conteúdo horizontalmente */
 }
 
@@ -93,9 +128,7 @@ a:hover {
 .content {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     max-width: 100%; /* Largura máxima do conteúdo */
-    width: 100%; /* O conteúdo ocupa toda a largura disponível */
     position: relative; /* Necessário para ficar acima do overlay */
     z-index: 2; /* Coloca o conteúdo acima do overlay */
 }
@@ -116,6 +149,13 @@ a:hover {
     font-size: 22px;
 }
 
+.image-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Move a imagem para o fundo da .image-content */
+    height: 100%; /* Para garantir que a altura do contentor seja total */
+  }
+
 /* Estilo da imagem à direita */
 .image-content img {
     max-width: 100%; /* Largura máxima da imagem */
@@ -125,7 +165,23 @@ a:hover {
 
 }
 
+@media (max-width: 1050px) {
+    .image-content img {
+        margin-right: 100px;
+    }
+}
 
+@media (max-width: 1000px) {
+    .content {
+      flex-direction: column; /* Alinha verticalmente os elementos */
+    }
+  
+    .text-content, .image-content {
+      width: 100%; /* Cada bloco ocupa toda a largura disponível */
+      max-width: 600px; /* Define um limite de largura para não ultrapassar os limites */
+      margin-bottom: 20px; /* Espaçamento entre os blocos */
+    }
+  }
 
 
 /* Estilo da seção com lista e texto */
@@ -136,13 +192,17 @@ a:hover {
     padding: 20px;
 }
 
+.image-information {
+    max-width: 100%;
+}
+
+
 /* Estilo do texto à direita */
 .text-information {
-    text-align: justify; /* Justifica o texto */
+    text-align:left; /* Justifica o texto */
     padding: 50px 70px;
     width: 50%;
 }
-
 
 .inline-list ul {
     display: inline; /* Exibe a lista em linha */
@@ -179,24 +239,24 @@ a:hover {
     height: 100%;
     background: rgba(0, 0, 0, 0.7); /* Adiciona um overlay escuro */
     z-index: 1; /* Coloca o overlay abaixo dos blocos */
+    margin: 0;
 }
 
 /* Estilo de cada bloco */
 .block {
     background-color: transparent; /* Cor de fundo do bloco */
     padding: 20px;
-    border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para destacar o bloco */
     text-align: center; /* Centraliza o conteúdo do bloco */
-    width: 250px; /* Largura fixa para cada bloco */
+    width: 50%; /* Largura fixa para cada bloco */
     position: relative; /* Necessário para posicionamento acima do overlay */
     z-index: 2; /* Garante que os blocos fiquem acima do overlay */
+    flex-wrap: wrap;
 }
 
 /* Estilo da imagem no bloco */
 .block img {
     max-width: 100%; /* Ajusta a imagem ao tamanho do bloco */
-    margin-bottom: 15px; /* Espaçamento abaixo da imagem */
 }
 
 /* Estilo da descrição */
@@ -228,20 +288,20 @@ footer {
     background-color: #333; /* Fundo escuro */
     color: #fff; /* Texto branco */
     font-size: 14px;
+    margin: 0;
 }
 
 .footer-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    max-width: 1200px;
-    margin: 0 auto;
+    margin: 0;
 }
 
 .footer-section {
-    flex: 1;
     min-width: 250px;
     padding: 20px;
+    align-items: center;
 }
 
 /* Estilo da Seção "Sobre Nós" */
@@ -266,4 +326,62 @@ footer {
 .footer-bottom {
     text-align: center;
     border-top: 1px solid #444;
+    font-size: 12px;
 }
+
+
+@media (max-width: 1200px) {
+    .text-section {
+        display: flex;
+        flex-direction: column; /* Alinha imagem e texto em coluna */
+        justify-content: center;
+    }
+    .text-information {
+        width: 100%;
+        padding: 0;
+    }
+
+    .text-information p {
+        text-align: justify;
+        font-size: 13px;
+    }
+
+    .text-information ul {
+        font-size: 13px;
+
+    }
+
+    .image-information img {
+        max-width: 100%; /* Limita a largura da imagem ao tamanho do container */
+        height: auto; /* Mantém a proporção da imagem */
+    }
+}
+
+@media (max-width: 768px) {
+    .text-information p {
+        text-align: justify;
+        font-size: 13px;
+        width: 100%;
+    }
+
+    .text-information ul {
+        font-size: 13px;
+        width: auto;
+    }
+}
+
+
+
+
+@media (max-width: 500px) {
+    .blocks-section {
+        flex-direction: column; /* Alinha os blocos verticalmente numa coluna */
+        height: inherit;
+        gap: 0;
+      }
+
+    .block {
+      width: 100%; /* Tamanho de cada .block abaixo de 500px */
+      padding: 0;
+    }
+  }
