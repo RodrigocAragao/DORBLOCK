@@ -71,6 +71,8 @@ main {
     /* Oculta os CTAs centrais e o CTA da direita */
     .header-cta-group, .header-cta-right {
         display: none;
+        flex-direction: column;
+        text-align: center;
     }
 
     /* Exibe o ícone de menu */
@@ -91,10 +93,10 @@ main {
         gap: 10px;
         border-radius: 5px;
         color: #fff;
-        z-index: 2;
+        z-index: 999;
     }
 
-    .header-cta-group.active button, .header-cta-right.active button {
+    .header-cta-group.active button {
         width: 100%;
         text-align: center;
     }
