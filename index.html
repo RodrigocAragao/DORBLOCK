@@ -14,12 +14,16 @@
                 <h1>DORblock</h1>
             </div>
             <nav class="header-cta-group">
-                <button>Produtos</button>
-                <button>Sobre</button>
-                <button>Contato</button>
+                    <button onclick="document.querySelector('.blocks-section').scrollIntoView({ behavior: 'smooth' });">Produtos</button>
+            
+                    <button onclick="document.querySelector('.text-section').scrollIntoView({ behavior: 'smooth' });">Sobre</button>
+            
+                    <button onclick="document.querySelector('.footer-container').scrollIntoView({ behavior: 'smooth' });">Contato</button>
             </nav>
             <div class="header-cta-right">
-                <button>Comprar</button>
+                <a href="https://www.priime.com.br/clinical" target="_blank">
+                    <button>Comprar</button>
+                </a>
             </div>
             <div class="menu-icon" id="menu-icon">
                 &#9776; <!-- Unicode para o ícone de menu -->
@@ -43,13 +47,13 @@
                         <p>"Alívio poderoso e duradouro com o poder<br>natural do canabidiol"</p>
                     </div>
                     <div class="image-content">
-                        <img src="dorblockTeste.png" alt="Imagem sobreposta">
+                        <img src="imagens_sobrepostas.png" alt="Imagem sobreposta">
                     </div>
                 </div>
             </section>
-            <section class="text-section">
+            <section id="text-section" class="text-section">
                 <div class="image-information">
-                    <img src="maniquim.png" alt="imagem icehot">
+                    <img src="3d-male-medical-figure-with-neck-muscles-highlighted-removebg-preview.png" alt="imagem icehot">
                 </div>
             
                 <div class="text-information">
@@ -62,22 +66,26 @@
                     <p>DORblock é a resposta natural para quem busca alívio sem comprometer o bem-estar. Abandone os métodos convencionais e permita-se a experiência única do DORblock. Torne o cuidado com suas dores uma jornada tranquila e eficaz.</p>
                 </div>
             </section>
-            <section class="blocks-section">
+            <section id="blocks-section" class="blocks-section">
                 <div class="block">
                     <img src="produtoblack.png" alt="Imagem 1">
                     <p>DORblock - BLACK</p>
-                    <button>Comprar</button>
+                    <a href="https://www.priime.com.br/tratamento/dorblock-black" target="_blank">
+                        <button>Comprar</button>
+                    </a>
                 </div>
                 <div class="block">
                     <img src="produtocitturs.png" alt="Imagem 1">
                     <p>DORblock - CITTRUS</p>
-                    <button>Comprar</button>
+                    <a href="https://www.priime.com.br/clinical/dorblock-cittrus" target="_blank">
+                        <button>Comprar</button>
+                    </a>
                 </div>
             </section>
         </main>
 
         <footer>
-            <div class="footer-container">
+            <div id="footer-container" class="footer-container">
                 <!-- Seção Sobre -->
                 <div class="footer-section about">
                     <h2>Sobre Nós</h2>
