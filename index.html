@@ -1,85 +1,135 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>DORblock</title>
-        <link rel="stylesheet" href="styles.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    </head>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Elixxidil</title>
+    <meta name="description" content="Elixxidil é um aerossol eficaz para o controle da queda de cabelo. Fórmula avançada que fortalece o cabelo e estimula o crescimento saudável.">
+    <meta name="keywords" content="Elixxidil, minoxidil, queda de cabelo, controle de queda, aerossol capilar, crescimento capilar, tratamento capilar, fortalecimento do cabelo, saúde do couro cabeludo">
+    <meta name="author" content="Elixxidil">
+    <meta property="og:title" content="Elixxidil - Aerossol para Controle de Queda de Cabelo">
+    <meta property="og:description" content="Recupere a saúde do seu cabelo com Elixxidil. Controle a queda e promova o crescimento capilar com nossa fórmula inovadora.">
+    <meta property="og:image" content="URL_DA_IMAGEM_DO_PRODUTO">
+    <meta property="og:url" content="URL_DO_PRODUTO">
+    <meta property="og:type" content="product">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Elixxidil - Aerossol para Controle de Queda de Cabelo">
+    <meta name="twitter:description" content="Fortaleça seu cabelo e controle a queda com Elixxidil, o aerossol capilar de fórmula avançada.">
+    <meta name="twitter:image" content="URL_DA_IMAGEM_DO_PRODUTO">
+    <link rel="icon" href="URL_DO_FAVICON" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
     <body>
-        <header class="header">
-            <div class="header-title">
-                <h1>DORblock</h1>
-            </div>
-            <nav class="header-cta-group">
-                    <button onclick="document.querySelector('.blocks-section').scrollIntoView({ behavior: 'smooth' });">Produtos</button>
-            
-                    <button onclick="document.querySelector('.text-section').scrollIntoView({ behavior: 'smooth' });">Sobre</button>
-            
+
+        <div class="cta-revendedor-fixo">
+            <a href="https://www.priime.com.br/clinical" target="_blank">
+                <button>Comprar</button>
+            </a>
+        </div>
+
+        <header>
+            <div class="header-container">
+                <div class="header-logo">
+                    Elixxidil
+                </div>
+                <div class="menu-icon" onclick="toggleMenu()">
+                    &#9776; 
+                </div>
+                <nav class="header-cta-group">
+                    <button onclick="document.querySelector('.section-three').scrollIntoView({ behavior: 'smooth' });">Home</button>
+                    <button onclick="document.querySelector('.section-with-image').scrollIntoView({ behavior: 'smooth' });">Sobre</button>
                     <button onclick="document.querySelector('.footer-container').scrollIntoView({ behavior: 'smooth' });">Contato</button>
-            </nav>
-            <div class="header-cta-right">
-                <a href="https://www.priime.com.br/clinical" target="_blank">
-                    <button>Comprar</button>
-                </a>
-            </div>
-            <div class="menu-icon" id="menu-icon">
-                &#9776; <!-- Unicode para o ícone de menu -->
+                </nav>
+                <div class="header-cta-right">
+                    <a href="https://api.whatsapp.com/send?phone=+5562999678080&text=Olá, gostaria de saber mais sobre como ser um revendedor!" target="_blank">
+                        <button>Seja Revendedor</button>
+                    </a>
+                </div>
             </div>
         </header>
-
-        <script>
-            document.getElementById('menu-icon').addEventListener('click', function() {
-                var ctaGroup = document.querySelector('.header-cta-group');
-                var ctaRight = document.querySelector('.header-cta-right');
-                ctaGroup.classList.toggle('active');
-                ctaRight.classList.toggle('active');
-            });
-        </script>
+        
 
         <main>
-            <section class="background-section">
-                <div class="content">
-                    <div class="text-content">
-                        <h2>DORblock</h2>
-                        <p>"Alívio poderoso e duradouro com o poder<br>natural do canabidiol"</p>
-                    </div>
-                    <div class="image-content">
-                        <img src="imagens_sobrepostas.png" alt="Imagem sobreposta">
-                    </div>
+            <!-- Primeira Secção -->
+            <section class="section-one">
+                <div class="text-content">
+                    <h1>Elixxidil</h1>
+                    <p>
+                        Spray dual action
+                    </p>
                 </div>
             </section>
-            <section id="text-section" class="text-section">
-                <div class="image-information">
-                    <img src="3d-male-medical-figure-with-neck-muscles-highlighted-removebg-preview.png" alt="imagem icehot">
-                </div>
-            
-                <div class="text-information">
-                    <p>O DORblock é mais do que um produto para alívio das dores. É uma solução natural para o seu bem-estar.<br><br>Com sua fórmula avançada com canabidiol, o DORblock oferece alívio potente e duradouro, enquanto sua aplicação suave torna o ritual em momento de autocuidado.</p>
-                        <ul>
-                            <li>Poder do Canabidiol (CBA): O CBA é um composto natural com propriedades calmantes e anti-inflamatórias, que oferece uma alternativa eficaz para o alívio da dor.</li>
-                            <li>Alívio Duradouro: O DORblock proporciona alívio que se estende por horas, mantendo você confortável e livre de desconfortos.</li>
-                            <li>Experiência Relaxante: A aplicação do DORblock promove uma sensação de calma e serenidade, transformando o alívio da dor em um momento zen.</li>
-                        </ul>
-                    <p>DORblock é a resposta natural para quem busca alívio sem comprometer o bem-estar. Abandone os métodos convencionais e permita-se a experiência única do DORblock. Torne o cuidado com suas dores uma jornada tranquila e eficaz.</p>
+
+            <!-- Terceira Secção -->
+            <section class="section-three">
+                <img src="ELIXXIDIL_SITE-removebg-preview.png" alt="Imagem Grande">
+                <div class="text-content">
+                    <h2>ELIXXIDIL - Spray dual action</h2>
+                    <br>
+                    <p>O Elixxidil é um tratamento inovador desenvolvido para combater a queda de cabelo e estimular o crescimento capilar, atuando diretamente nos folículos enfraquecidos.
+                        A sua fórmula avançada é enriquecida com peptídeos sinalizadores derivados de plantas, que desempenham um papel crucial na revitalização dos cabelos.</p>
+                    <br>
+                    <a href="https://www.priime.com.br/clinical/elixxidil-spray-dual-action" target="_blank">
+                    <button class="cta-buy">Comprar</button>
+                    </a>
                 </div>
             </section>
-            <section id="blocks-section" class="blocks-section">
-                <div class="block">
-                    <img src="produtoblack.png" alt="Imagem 1">
-                    <p>DORblock - BLACK</p>
-                    <a href="https://www.priime.com.br/tratamento/dorblock-black" target="_blank">
-                        <button>Comprar</button>
-                    </a>
+
+            <!-- Secção com 4 Blocos -->
+            <section class="four-blocks">
+                <div class="block"><strong>Estimula o Crescimento Capilar:</strong> A fórmula do Elixxidil ativa e nutre os folículos capilares, promovendo o crescimento saudável do cabelo e reduzindo a queda progressiva.</div>
+                <div class="block"><strong>Peptídeos Sinalizadores:</strong> Graças à presença de peptídeos obtidos da Curcuma longa, o produto reinicia a atividade folicular, restaurando a vitalidade dos fios.</div>
+                <div class="block"><strong>Blend Nutritivo:</strong> Um conjunto de nutrientes essenciais que reforçam a saúde do couro cabeludo e dos folículos capilares, promovendo cabelos mais fortes e volumosos.</div>
+            </section>
+
+                <!-- Secção com imagem e títulos com descrição -->
+            <section class="section-with-image">
+                <div class="text-content">
+                    <h2>fórmula avançada</h2>
+                    <div class="accordion">
+                        <div class="accordion-item">
+                            <div class="accordion-title" data-image="grafico_capilia_longa.jpg">
+                                <h3>Capilia Longa®</h3>
+                                <span class="arrow">&#9660;</span>
+                            </div>
+                            <div class="accordion-description">
+                                <p>A Capilia Longa® age nos fatores chaves para o crescimento adequado do 
+                                    bulbo capilar e equilíbrio do ciclo de crescimento do cabelo</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-title" data-image="elaya_renova.png">
+                                <h3>Elaya Renova™</h3>
+                                <span class="arrow">&#9660;</span>
+                            </div>
+                            <div class="accordion-description">
+                                <p>Elaya Renova™ é um complexo rico em proteínas, lipídios e oligoelementos. 
+                                    Essas substâncias são encapsuladas em ciclodextrina, o que aumenta a adesão e penetração das mesmas no couro 
+                                    cabeludo, bulbo e haste, fortalecendo e contribuindo para a hidratação e regeneração dessas estruturas. Desse 
+                                    modo, o ativo contribui para o equilíbrio de todo o complexo capilar</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-title" data-image="elayaGrafico.png">
+                                <h3>Nano cafeína</h3>
+                                <span class="arrow">&#9660;</span>
+                            </div>
+                            <div class="accordion-description">
+                                <p>A nano cafeína possui propriedades que podem auxiliar no combate à calvície e estimular o crescimento capilar.
+                                    A sua ação se dá através da inibição da atividade da enzima 5 α-redutase, que é responsável pela conversão da 
+                                    testosterona em di-hidrotestosterona (DHT), um hormônio associado à queda de cabelo.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="block">
-                    <img src="produtocitturs.png" alt="Imagem 1">
-                    <p>DORblock - CITTRUS</p>
-                    <a href="https://www.priime.com.br/clinical/dorblock-cittrus" target="_blank">
-                        <button>Comprar</button>
-                    </a>
+
+                <div class="image-content">
+                    <img id="accordion-image" src="before&after.jpg" alt="Imagem padrão">
                 </div>
             </section>
         </main>
@@ -110,5 +160,6 @@
                 <p>&copy; 2024 PRIIME VIDA E SAUDE LTDA. Todos os direitos reservados.</p>
             </div>
         </footer>
+        <script src="script.js"></script>    
     </body>
 </html>
