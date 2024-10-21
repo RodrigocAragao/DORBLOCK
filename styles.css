@@ -8,10 +8,35 @@ html, body {
     flex-direction: column;
     min-height: 100vh; /* Garante que o conteúdo ocupe pelo menos 100% da altura da janela */
     overflow-x: hidden; /* Impede que a página permita rolagem horizontal */
+    padding-top: 20px;
 }
 
 main {
     flex: 1; /* Faz com que o main ocupe o espaço restante, empurrando o footer para o final da página */
+}
+
+.cta-revendedor-fixo {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.cta-revendedor-fixo button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.cta-revendedor-fixo button:hover {
+    background-color: #218838;
+    transform: scale(1.05);
 }
 
 .header {
@@ -20,6 +45,16 @@ main {
     align-items: center;
     background-color: black;
     color: white;
+}
+
+header {
+    position: fixed;
+    top: 0;        
+    left: 0;      
+    width: 100%;   
+    z-index: 1000;
+    background-color: #fff; /* Define um fundo para o header, caso necessário */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra (opcional) */
 }
 
 /* Título do Header */
@@ -66,41 +101,51 @@ main {
     cursor: pointer;
 }
 
-/* Media Query para telas menores que 768px */
-@media (max-width: 768px) {
-    /* Oculta os CTAs centrais e o CTA da direita */
-    .header-cta-group, .header-cta-right {
-        display: none;
-        flex-direction: column;
-        text-align: center;
-    }
+    @media (max-width: 768px) {
+        .header-cta-group,
+        .header-cta-right {
+            display: none; /* Esconder ambos os grupos de CTA inicialmente */
+            flex-direction: column;
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            background-color: #333;
+            gap: 15px;
+            width: 100px;
+            border-radius: 8px;
+            z-index: 1000;
+            margin-right: auto;
+        }
 
-    /* Exibe o ícone de menu */
-    .menu-icon {
-        display: block;
-        margin-right: 50px;
+        .header-cta-group.active,
+        .header-cta-right.active {
+            display: flex; /* Mostrar ambos os grupos quando o ícone de menu é clicado */
+        }
+    
+        .menu-icon {
+            display: block; /* Exibe o ícone de menu em telas pequenas */
+            position: relative;
+            right: 20px;
+        }
+    
+        .header-cta-group button,
+        .header-cta-right button {
+            width: 100%; /* Botões ocupam toda a largura no layout em coluna */
+            text-align: center;
+            padding: 12px;
+            font-size: 16px;
+            color: white;
+            background-color: #444;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    
+        .header-cta-group button:hover,
+        .header-cta-right button:hover {
+            background-color: #555; /* Mudar cor ao passar o mouse */
+        }
     }
-
-    /* Exibe o menu quando o ícone é clicado */
-    .header-cta-group.active {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 60px; /* Abaixo do header */
-        right: 20px;
-        background-color: #333;
-        padding: 10px;
-        gap: 10px;
-        border-radius: 5px;
-        color: #fff;
-        z-index: 999;
-    }
-
-    .header-cta-group.active button {
-        width: 100%;
-        text-align: center;
-    }
-}
 
 
 
@@ -413,3 +458,29 @@ footer {
       padding: 0;
     }
   }
+
+
+
+  .cta-revendedor-fixo {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.cta-revendedor-fixo button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.cta-revendedor-fixo button:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
